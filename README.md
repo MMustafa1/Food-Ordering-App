@@ -13,8 +13,9 @@ This project includes many features which allow a user to order food, search for
 Muhammad Mustafa 
 https://github.com/MMustafa1
 Muhammad Moeez Salman
-MoeezSalman (github.com)
+https://github.com/MoeezSalman
 Tayyaba Fatima
-tayyabafatima08 (Tayyaba Fatima ) (github.com)
+https://github.com/tayyabafatima08
 Eishah Iqbal
-eishah-iqbal (github.com)
+https://github.com/eishah-iqbal
+
