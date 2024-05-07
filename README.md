@@ -20,6 +20,7 @@ This project includes many features which allow a user to order food, search for
 **How to Use:** This application offers a user-friendly experience. Upon opening, users will first encounter the logo and then be prompted to choose between joining as a professional or as a customer. Following this, users will need to either log in or sign up for an account. If joining as a professional, users will gain access to a dashboard featuring options such as order management, earnings tracking, and order completion status. Alternatively, if joining as a customer, users will navigate through various restaurants via a search bar on an open page, with additional features like ordered food tracking, delivery status, and reward points. Once selecting a restaurant, users will proceed to choose items from the menu, adding them to the cart. Subsequently, users will review the cart before confirming the order. Payment options include bank transfer or cash on delivery. Users will then confirm the delivery address, and the application will provide an estimated delivery time. Following delivery, users will be prompted to rate and review both the food quality and the app's service.
 
 **Credits:**
+
 Muhammad Mustafa 
 
 https://github.com/MMustafa1
