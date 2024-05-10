@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CART.h"
 namespace OOPFINALPROJECTSEMESTER2 {
 
 	using namespace System;
@@ -15,6 +15,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	public ref class CHICKINOW : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ obj;
 		CHICKINOW(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,14 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		CHICKINOW(Form^ obj1)
+		{
+			obj = obj1;
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -34,6 +42,9 @@ namespace OOPFINALPROJECTSEMESTER2 {
 				delete components;
 			}
 		}
+	public:int totalAmount;
+	public:int totalitems;
+	public:int nettotal;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	protected:
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
@@ -61,6 +72,13 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Label^ label12;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
+	private: System::Windows::Forms::Button^ button8;
 
 	private:
 		/// <summary>
@@ -102,6 +120,13 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown2 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -109,6 +134,12 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// pictureBox1
@@ -119,6 +150,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->pictureBox1->Size = System::Drawing::Size(363, 292);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
+			this->pictureBox1->Click += gcnew System::EventHandler(this, &CHICKINOW::pictureBox1_Click);
 			// 
 			// pictureBox2
 			// 
@@ -277,7 +309,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(1698, 408);
+			this->textBox4->Location = System::Drawing::Point(1678, 404);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ReadOnly = true;
 			this->textBox4->Size = System::Drawing::Size(155, 24);
@@ -289,7 +321,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(1646, 407);
+			this->label7->Location = System::Drawing::Point(1626, 403);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(46, 24);
 			this->label7->TabIndex = 17;
@@ -300,7 +332,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label8->AutoSize = true;
 			this->label8->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(1646, 319);
+			this->label8->Location = System::Drawing::Point(1626, 315);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(176, 24);
 			this->label8->TabIndex = 16;
@@ -310,7 +342,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(1698, 655);
+			this->textBox5->Location = System::Drawing::Point(1678, 651);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->ReadOnly = true;
 			this->textBox5->Size = System::Drawing::Size(155, 24);
@@ -322,7 +354,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(1646, 654);
+			this->label9->Location = System::Drawing::Point(1626, 650);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(46, 24);
 			this->label9->TabIndex = 20;
@@ -333,7 +365,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(1606, 566);
+			this->label10->Location = System::Drawing::Point(1586, 562);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(286, 24);
 			this->label10->TabIndex = 19;
@@ -343,7 +375,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(1698, 953);
+			this->textBox6->Location = System::Drawing::Point(1678, 949);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->ReadOnly = true;
 			this->textBox6->Size = System::Drawing::Size(155, 24);
@@ -355,7 +387,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(1646, 952);
+			this->label11->Location = System::Drawing::Point(1626, 948);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(46, 24);
 			this->label11->TabIndex = 23;
@@ -366,7 +398,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(1646, 864);
+			this->label12->Location = System::Drawing::Point(1626, 860);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(194, 24);
 			this->label12->TabIndex = 22;
@@ -383,6 +415,76 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->button1->TabIndex = 25;
 			this->button1->Text = L"PROCEED TO CART";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &CHICKINOW::button1_Click);
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown1->Location = System::Drawing::Point(695, 387);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown1->TabIndex = 26;
+			// 
+			// numericUpDown2
+			// 
+			this->numericUpDown2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown2->Location = System::Drawing::Point(695, 654);
+			this->numericUpDown2->Name = L"numericUpDown2";
+			this->numericUpDown2->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown2->TabIndex = 27;
+			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown3->Location = System::Drawing::Point(695, 947);
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown3->TabIndex = 28;
+			// 
+			// numericUpDown4
+			// 
+			this->numericUpDown4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown4->Location = System::Drawing::Point(1839, 405);
+			this->numericUpDown4->Name = L"numericUpDown4";
+			this->numericUpDown4->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown4->TabIndex = 29;
+			// 
+			// numericUpDown5
+			// 
+			this->numericUpDown5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown5->Location = System::Drawing::Point(1839, 650);
+			this->numericUpDown5->Name = L"numericUpDown5";
+			this->numericUpDown5->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown5->TabIndex = 30;
+			// 
+			// numericUpDown6
+			// 
+			this->numericUpDown6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->numericUpDown6->Location = System::Drawing::Point(1839, 947);
+			this->numericUpDown6->Name = L"numericUpDown6";
+			this->numericUpDown6->Size = System::Drawing::Size(56, 24);
+			this->numericUpDown6->TabIndex = 31;
+			// 
+			// button8
+			// 
+			this->button8->BackColor = System::Drawing::Color::Transparent;
+			this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->ForeColor = System::Drawing::Color::RosyBrown;
+			this->button8->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button8->Location = System::Drawing::Point(22, 66);
+			this->button8->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(84, 70);
+			this->button8->TabIndex = 85;
+			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &CHICKINOW::button8_Click);
 			// 
 			// CHICKINOW
 			// 
@@ -390,6 +492,13 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->button8);
+			this->Controls->Add(this->numericUpDown6);
+			this->Controls->Add(this->numericUpDown5);
+			this->Controls->Add(this->numericUpDown4);
+			this->Controls->Add(this->numericUpDown3);
+			this->Controls->Add(this->numericUpDown2);
+			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox6);
 			this->Controls->Add(this->label11);
@@ -420,6 +529,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"CHICKINOW";
 			this->Text = L"TASTY TRIALS";
+			this->Load += gcnew System::EventHandler(this, &CHICKINOW::CHICKINOW_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -427,10 +537,50 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown6))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		totalAmount = 0;
+		totalitems = 0;
+		totalitems += Convert::ToInt32(numericUpDown1->Value);
+		totalitems += Convert::ToInt32(numericUpDown2->Value);
+		totalitems += Convert::ToInt32(numericUpDown3->Value);
+		totalitems += Convert::ToInt32(numericUpDown4->Value);
+		totalitems += Convert::ToInt32(numericUpDown5->Value);
+		totalitems += Convert::ToInt32(numericUpDown6->Value);
+		totalAmount += Convert::ToInt32(textBox1->Text) * Convert::ToInt32(numericUpDown1->Value);
+		totalAmount += Convert::ToInt32(textBox2->Text) * Convert::ToInt32(numericUpDown2->Value);
+		totalAmount += Convert::ToInt32(textBox3->Text) * Convert::ToInt32(numericUpDown3->Value);
+		totalAmount += Convert::ToInt32(textBox4->Text) * Convert::ToInt32(numericUpDown4->Value);
+		totalAmount += Convert::ToInt32(textBox5->Text) * Convert::ToInt32(numericUpDown5->Value);
+		totalAmount += Convert::ToInt32(textBox6->Text) * Convert::ToInt32(numericUpDown6->Value);
+		nettotal = totalAmount + 150;
+		OOPFINALPROJECTSEMESTER2::CART^ cart = gcnew OOPFINALPROJECTSEMESTER2::CART(totalAmount, totalitems, nettotal,this);
+		cart->Show();
+		this->Hide();
+
+
+
+	}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Hide();
+	obj->Show();
+
+
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void CHICKINOW_Load(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

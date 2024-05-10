@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CART.h"
 namespace OOPFINALPROJECTSEMESTER2 {
 
 	using namespace System;
@@ -15,8 +15,19 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	public ref class KFC : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ obj;
 		KFC(void)
 		{
+			InitializeComponent();
+			int totalAmount = 0;
+			
+			//
+			//TODO: Add the constructor code here
+			//
+		}
+		KFC(Form^ obj1)
+		{
+			obj = obj1;
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -34,6 +45,9 @@ namespace OOPFINALPROJECTSEMESTER2 {
 				delete components;
 			}
 		}
+	public:int totalAmount;
+	public:int totalitems;
+	public:int nettotal;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
 	private: System::Windows::Forms::PictureBox^ pictureBox2;
 	private: System::Windows::Forms::PictureBox^ pictureBox3;
@@ -72,6 +86,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	private: System::Windows::Forms::Label^ label14;
 
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button8;
 	protected:
 
 	private:
@@ -120,6 +135,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->BeginInit();
@@ -463,6 +479,22 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->button1->TabIndex = 37;
 			this->button1->Text = L"PROCEED TO CART";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &KFC::button1_Click);
+			// 
+			// button8
+			// 
+			this->button8->BackColor = System::Drawing::Color::Transparent;
+			this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->ForeColor = System::Drawing::Color::RosyBrown;
+			this->button8->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button8->Location = System::Drawing::Point(29, 60);
+			this->button8->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(84, 70);
+			this->button8->TabIndex = 38;
+			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &KFC::button8_Click);
 			// 
 			// KFC
 			// 
@@ -470,6 +502,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->button8);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->numericUpDown7);
 			this->Controls->Add(this->textBox7);
@@ -506,6 +539,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"KFC";
 			this->Text = L"TASTY TRIALS";
+			this->Load += gcnew System::EventHandler(this, &KFC::KFC_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -524,5 +558,41 @@ namespace OOPFINALPROJECTSEMESTER2 {
 
 		}
 #pragma endregion
-	};
+		
+	private: System::Void KFC_Load(System::Object^ sender, System::EventArgs^ e)
+	{
+
+
+
+	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	totalAmount = 0;
+	totalitems = 0;
+	totalitems += Convert::ToInt32(numericUpDown1->Value);
+	totalitems+= Convert::ToInt32(numericUpDown2->Value);
+	totalitems += Convert::ToInt32(numericUpDown3->Value);
+	totalitems += Convert::ToInt32(numericUpDown5->Value);
+	totalitems += Convert::ToInt32(numericUpDown6->Value);
+	totalitems += Convert::ToInt32(numericUpDown7->Value);
+	totalAmount += Convert::ToInt32(textBox1->Text) * Convert::ToInt32(numericUpDown1->Value);
+	totalAmount += Convert::ToInt32(textBox2->Text) * Convert::ToInt32(numericUpDown2->Value);
+	totalAmount += Convert::ToInt32(textBox3->Text) * Convert::ToInt32(numericUpDown3->Value);
+	totalAmount += Convert::ToInt32(textBox5->Text) * Convert::ToInt32(numericUpDown5->Value);
+	totalAmount += Convert::ToInt32(textBox6->Text) * Convert::ToInt32(numericUpDown6->Value);
+	totalAmount += Convert::ToInt32(textBox7->Text) * Convert::ToInt32(numericUpDown7->Value);
+	nettotal = totalAmount + 150;
+	OOPFINALPROJECTSEMESTER2::CART^ cart = gcnew OOPFINALPROJECTSEMESTER2::CART(totalAmount,totalitems,nettotal,this);
+	cart->Show();
+	this->Hide();
+
+	
+	
+
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	this->Hide();
+	obj->Show();
+}
+};
 }

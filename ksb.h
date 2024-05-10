@@ -1,5 +1,5 @@
 #pragma once
-
+#include "CART.h"
 namespace OOPFINALPROJECTSEMESTER2 {
 
 	using namespace System;
@@ -15,6 +15,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	public ref class ksb : public System::Windows::Forms::Form
 	{
 	public:
+		Form^ obj;
 		ksb(void)
 		{
 			InitializeComponent();
@@ -22,7 +23,14 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			//TODO: Add the constructor code here
 			//
 		}
-
+		ksb(Form^ obj1)
+		{
+			obj = obj1;
+			InitializeComponent();
+			//
+			//TODO: Add the constructor code here
+			//
+		}
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
@@ -34,6 +42,9 @@ namespace OOPFINALPROJECTSEMESTER2 {
 				delete components;
 			}
 		}
+	public:int totalAmount;
+	public:int totalitems;
+	public:int nettotal;
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::TextBox^ textBox6;
@@ -67,6 +78,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown6;
+	private: System::Windows::Forms::Button^ button8;
 
 	protected:
 
@@ -141,6 +153,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->numericUpDown4 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->numericUpDown6 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox6))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox5))->BeginInit();
@@ -168,6 +181,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->button1->TabIndex = 73;
 			this->button1->Text = L"PROCEED TO CART";
 			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &ksb::button1_Click);
 			// 
 			// textBox6
 			// 
@@ -483,12 +497,28 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->numericUpDown6->Size = System::Drawing::Size(48, 26);
 			this->numericUpDown6->TabIndex = 79;
 			// 
+			// button8
+			// 
+			this->button8->BackColor = System::Drawing::Color::Transparent;
+			this->button8->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"button8.BackgroundImage")));
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->ForeColor = System::Drawing::Color::RosyBrown;
+			this->button8->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
+			this->button8->Location = System::Drawing::Point(26, 61);
+			this->button8->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(84, 70);
+			this->button8->TabIndex = 80;
+			this->button8->UseVisualStyleBackColor = false;
+			this->button8->Click += gcnew System::EventHandler(this, &ksb::button8_Click);
+			// 
 			// ksb
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->ClientSize = System::Drawing::Size(1904, 1041);
+			this->Controls->Add(this->button8);
 			this->Controls->Add(this->numericUpDown6);
 			this->Controls->Add(this->numericUpDown5);
 			this->Controls->Add(this->numericUpDown4);
@@ -545,5 +575,34 @@ namespace OOPFINALPROJECTSEMESTER2 {
 #pragma endregion
 	private: System::Void ksb_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	totalAmount = 0;
+	totalitems = 0;
+	totalitems += Convert::ToInt32(numericUpDown1->Value);
+	totalitems += Convert::ToInt32(numericUpDown2->Value);
+	totalitems += Convert::ToInt32(numericUpDown3->Value);
+	totalitems += Convert::ToInt32(numericUpDown4->Value);
+	totalitems += Convert::ToInt32(numericUpDown5->Value);
+	totalitems += Convert::ToInt32(numericUpDown6->Value);
+	totalAmount += Convert::ToInt32(textBox1->Text) * Convert::ToInt32(numericUpDown1->Value);
+	totalAmount += Convert::ToInt32(textBox2->Text) * Convert::ToInt32(numericUpDown2->Value);
+	totalAmount += Convert::ToInt32(textBox3->Text) * Convert::ToInt32(numericUpDown3->Value);
+	totalAmount += Convert::ToInt32(textBox4->Text) * Convert::ToInt32(numericUpDown4->Value);
+	totalAmount += Convert::ToInt32(textBox5->Text) * Convert::ToInt32(numericUpDown5->Value);
+	totalAmount += Convert::ToInt32(textBox6->Text) * Convert::ToInt32(numericUpDown6->Value);
+	nettotal = totalAmount + 150;
+	OOPFINALPROJECTSEMESTER2::CART^ cart = gcnew OOPFINALPROJECTSEMESTER2::CART(totalAmount, totalitems, nettotal,this);
+	cart->Show();
+	this->Hide();
+
+
+
+
+}
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Hide();
+	obj->Show();
+
+}
 };
 }

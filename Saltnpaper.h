@@ -10,20 +10,20 @@ namespace OOPFINALPROJECTSEMESTER2 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for PO
+	/// Summary for Saltnpaper
 	/// </summary>
-	public ref class PO : public System::Windows::Forms::Form
+	public ref class Saltnpaper : public System::Windows::Forms::Form
 	{
 	public:
 		Form^ obj;
-		PO(void)
+		Saltnpaper(void)
 		{
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
 			//
 		}
-		PO(Form^ obj1)
+		Saltnpaper(Form^ obj1)
 		{
 			obj = obj1;
 			InitializeComponent();
@@ -31,11 +31,12 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			//TODO: Add the constructor code here
 			//
 		}
+
 	protected:
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~PO()
+		~Saltnpaper()
 		{
 			if (components)
 			{
@@ -93,7 +94,7 @@ namespace OOPFINALPROJECTSEMESTER2 {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(PO::typeid));
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(Saltnpaper::typeid));
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox2 = (gcnew System::Windows::Forms::PictureBox());
 			this->pictureBox3 = (gcnew System::Windows::Forms::PictureBox());
@@ -144,84 +145,85 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			// pictureBox1
 			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.BackgroundImage")));
-			this->pictureBox1->Location = System::Drawing::Point(634, 161);
+			this->pictureBox1->Location = System::Drawing::Point(771, 167);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(371, 304);
+			this->pictureBox1->Size = System::Drawing::Size(389, 205);
 			this->pictureBox1->TabIndex = 0;
 			this->pictureBox1->TabStop = false;
 			// 
 			// pictureBox2
 			// 
 			this->pictureBox2->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox2.BackgroundImage")));
-			this->pictureBox2->Location = System::Drawing::Point(12, 295);
+			this->pictureBox2->Location = System::Drawing::Point(35, 281);
 			this->pictureBox2->Name = L"pictureBox2";
-			this->pictureBox2->Size = System::Drawing::Size(266, 212);
+			this->pictureBox2->Size = System::Drawing::Size(238, 195);
 			this->pictureBox2->TabIndex = 1;
 			this->pictureBox2->TabStop = false;
 			// 
 			// pictureBox3
 			// 
 			this->pictureBox3->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox3.BackgroundImage")));
-			this->pictureBox3->Location = System::Drawing::Point(12, 534);
+			this->pictureBox3->Location = System::Drawing::Point(35, 509);
 			this->pictureBox3->Name = L"pictureBox3";
-			this->pictureBox3->Size = System::Drawing::Size(266, 212);
+			this->pictureBox3->Size = System::Drawing::Size(238, 195);
 			this->pictureBox3->TabIndex = 2;
 			this->pictureBox3->TabStop = false;
 			// 
 			// pictureBox4
 			// 
 			this->pictureBox4->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox4.BackgroundImage")));
-			this->pictureBox4->Location = System::Drawing::Point(12, 777);
+			this->pictureBox4->Location = System::Drawing::Point(35, 744);
 			this->pictureBox4->Name = L"pictureBox4";
-			this->pictureBox4->Size = System::Drawing::Size(266, 212);
+			this->pictureBox4->Size = System::Drawing::Size(238, 195);
 			this->pictureBox4->TabIndex = 3;
 			this->pictureBox4->TabStop = false;
 			// 
 			// pictureBox5
 			// 
 			this->pictureBox5->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox5.BackgroundImage")));
-			this->pictureBox5->Location = System::Drawing::Point(1187, 295);
+			this->pictureBox5->Location = System::Drawing::Point(1340, 734);
 			this->pictureBox5->Name = L"pictureBox5";
-			this->pictureBox5->Size = System::Drawing::Size(261, 212);
-			this->pictureBox5->TabIndex = 4;
+			this->pictureBox5->Size = System::Drawing::Size(238, 195);
+			this->pictureBox5->TabIndex = 6;
 			this->pictureBox5->TabStop = false;
 			// 
 			// pictureBox6
 			// 
 			this->pictureBox6->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox6.BackgroundImage")));
-			this->pictureBox6->Location = System::Drawing::Point(1187, 534);
+			this->pictureBox6->Location = System::Drawing::Point(1340, 499);
 			this->pictureBox6->Name = L"pictureBox6";
-			this->pictureBox6->Size = System::Drawing::Size(261, 212);
+			this->pictureBox6->Size = System::Drawing::Size(238, 195);
 			this->pictureBox6->TabIndex = 5;
 			this->pictureBox6->TabStop = false;
 			// 
 			// pictureBox7
 			// 
 			this->pictureBox7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox7.BackgroundImage")));
-			this->pictureBox7->Location = System::Drawing::Point(1187, 777);
+			this->pictureBox7->Location = System::Drawing::Point(1340, 271);
 			this->pictureBox7->Name = L"pictureBox7";
-			this->pictureBox7->Size = System::Drawing::Size(261, 212);
-			this->pictureBox7->TabIndex = 6;
+			this->pictureBox7->Size = System::Drawing::Size(238, 195);
+			this->pictureBox7->TabIndex = 4;
 			this->pictureBox7->TabStop = false;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label1->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(303, 339);
+			this->label1->Location = System::Drawing::Point(326, 318);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(243, 22);
+			this->label1->Size = System::Drawing::Size(231, 24);
 			this->label1->TabIndex = 7;
-			this->label1->Text = L"HONEY DRIZZLED WINGS";
+			this->label1->Text = L"HOT AND SOUR SOUP";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(304, 425);
+			this->label2->Location = System::Drawing::Point(326, 404);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(43, 22);
 			this->label2->TabIndex = 8;
@@ -229,32 +231,32 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			// textBox1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(388, 425);
+			this->textBox1->Location = System::Drawing::Point(380, 400);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(145, 26);
+			this->textBox1->Size = System::Drawing::Size(177, 26);
 			this->textBox1->TabIndex = 9;
-			this->textBox1->Text = L"700";
+			this->textBox1->Text = L"650";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox2->Location = System::Drawing::Point(389, 687);
+			this->textBox2->Location = System::Drawing::Point(380, 626);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(145, 26);
+			this->textBox2->Size = System::Drawing::Size(177, 26);
 			this->textBox2->TabIndex = 12;
-			this->textBox2->Text = L"1500";
+			this->textBox2->Text = L"900";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(305, 687);
+			this->label3->Location = System::Drawing::Point(326, 630);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(43, 22);
 			this->label3->TabIndex = 11;
@@ -263,31 +265,31 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label4->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(304, 601);
+			this->label4->Location = System::Drawing::Point(326, 544);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(166, 22);
+			this->label4->Size = System::Drawing::Size(165, 24);
 			this->label4->TabIndex = 10;
-			this->label4->Text = L"CHICKEN FAJITA";
+			this->label4->Text = L"LOADED FRIES";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox3->Location = System::Drawing::Point(388, 904);
+			this->textBox3->Location = System::Drawing::Point(380, 869);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->ReadOnly = true;
-			this->textBox3->Size = System::Drawing::Size(145, 26);
+			this->textBox3->Size = System::Drawing::Size(177, 26);
 			this->textBox3->TabIndex = 15;
-			this->textBox3->Text = L"400";
+			this->textBox3->Text = L"1000";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(304, 904);
+			this->label5->Location = System::Drawing::Point(326, 873);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(43, 22);
 			this->label5->TabIndex = 14;
@@ -296,31 +298,31 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label6->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(303, 818);
+			this->label6->Location = System::Drawing::Point(326, 787);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(111, 22);
+			this->label6->Size = System::Drawing::Size(327, 24);
 			this->label6->TabIndex = 13;
-			this->label6->Text = L"SPIN ROLL";
+			this->label6->Text = L"CHICKEN POCKET SANDWITCH";
 			// 
 			// textBox4
 			// 
-			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox4->Location = System::Drawing::Point(1629, 440);
+			this->textBox4->Location = System::Drawing::Point(1645, 398);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->ReadOnly = true;
-			this->textBox4->Size = System::Drawing::Size(145, 26);
+			this->textBox4->Size = System::Drawing::Size(177, 26);
 			this->textBox4->TabIndex = 18;
-			this->textBox4->Text = L"800";
+			this->textBox4->Text = L"2000";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
 			this->label7->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(1545, 440);
+			this->label7->Location = System::Drawing::Point(1591, 402);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(43, 22);
 			this->label7->TabIndex = 17;
@@ -328,32 +330,31 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// 
 			// label8
 			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label8->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(1544, 354);
+			this->label8->Location = System::Drawing::Point(1584, 306);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(171, 22);
+			this->label8->Size = System::Drawing::Size(273, 54);
 			this->label8->TabIndex = 16;
-			this->label8->Text = L"CHICKEN STRIPS";
+			this->label8->Text = L"DOUBLE BEEF CHEESE BURGER";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox5->Location = System::Drawing::Point(1629, 674);
+			this->textBox5->Location = System::Drawing::Point(1645, 633);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->ReadOnly = true;
-			this->textBox5->Size = System::Drawing::Size(145, 26);
+			this->textBox5->Size = System::Drawing::Size(177, 26);
 			this->textBox5->TabIndex = 21;
-			this->textBox5->Text = L"500";
+			this->textBox5->Text = L"1700";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
 			this->label9->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(1545, 674);
+			this->label9->Location = System::Drawing::Point(1591, 637);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(43, 22);
 			this->label9->TabIndex = 20;
@@ -362,31 +363,31 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label10->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(1544, 588);
+			this->label10->Location = System::Drawing::Point(1591, 551);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(105, 22);
+			this->label10->Size = System::Drawing::Size(228, 24);
 			this->label10->TabIndex = 19;
-			this->label10->Text = L"NUGGETS";
+			this->label10->Text = L"CHICKEN MALAI BOTI";
 			// 
 			// textBox6
 			// 
-			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->textBox6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox6->Location = System::Drawing::Point(1616, 894);
+			this->textBox6->Location = System::Drawing::Point(1645, 867);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->ReadOnly = true;
-			this->textBox6->Size = System::Drawing::Size(145, 26);
+			this->textBox6->Size = System::Drawing::Size(177, 26);
 			this->textBox6->TabIndex = 24;
-			this->textBox6->Text = L"1200";
+			this->textBox6->Text = L"1600";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(1532, 894);
+			this->label11->Location = System::Drawing::Point(1591, 871);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(43, 22);
 			this->label11->TabIndex = 23;
@@ -395,81 +396,80 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label12->Font = (gcnew System::Drawing::Font(L"Arial", 15.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->Location = System::Drawing::Point(1531, 808);
+			this->label12->Location = System::Drawing::Point(1591, 785);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(218, 22);
+			this->label12->Size = System::Drawing::Size(265, 24);
 			this->label12->TabIndex = 22;
-			this->label12->Text = L"CHEESY CRUST PIZZA";
+			this->label12->Text = L"FIRE CRACKER CHICKEN";
 			// 
 			// button1
 			// 
 			this->button1->BackColor = System::Drawing::Color::IndianRed;
-			this->button1->Cursor = System::Windows::Forms::Cursors::PanNW;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Arial", 14.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->button1->Font = (gcnew System::Drawing::Font(L"Arial", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::Control;
-			this->button1->Location = System::Drawing::Point(701, 943);
+			this->button1->Location = System::Drawing::Point(808, 913);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(288, 46);
+			this->button1->Size = System::Drawing::Size(282, 41);
 			this->button1->TabIndex = 25;
 			this->button1->Text = L"PROCEED TO CART";
 			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &PO::button1_Click);
+			this->button1->Click += gcnew System::EventHandler(this, &Saltnpaper::button1_Click);
 			// 
 			// numericUpDown1
 			// 
 			this->numericUpDown1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown1->Location = System::Drawing::Point(558, 427);
+			this->numericUpDown1->Location = System::Drawing::Point(614, 400);
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown1->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown1->TabIndex = 26;
 			// 
 			// numericUpDown2
 			// 
 			this->numericUpDown2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown2->Location = System::Drawing::Point(558, 689);
+			this->numericUpDown2->Location = System::Drawing::Point(614, 626);
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown2->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown2->TabIndex = 27;
 			// 
 			// numericUpDown3
 			// 
 			this->numericUpDown3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown3->Location = System::Drawing::Point(558, 905);
+			this->numericUpDown3->Location = System::Drawing::Point(614, 869);
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown3->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown3->TabIndex = 28;
 			// 
 			// numericUpDown4
 			// 
 			this->numericUpDown4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown4->Location = System::Drawing::Point(1796, 441);
+			this->numericUpDown4->Location = System::Drawing::Point(1841, 398);
 			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown4->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown4->TabIndex = 29;
 			// 
 			// numericUpDown5
 			// 
 			this->numericUpDown5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown5->Location = System::Drawing::Point(1796, 672);
+			this->numericUpDown5->Location = System::Drawing::Point(1841, 635);
 			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown5->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown5->TabIndex = 30;
 			// 
 			// numericUpDown6
 			// 
 			this->numericUpDown6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->numericUpDown6->Location = System::Drawing::Point(1796, 892);
+			this->numericUpDown6->Location = System::Drawing::Point(1841, 867);
 			this->numericUpDown6->Name = L"numericUpDown6";
-			this->numericUpDown6->Size = System::Drawing::Size(52, 24);
+			this->numericUpDown6->Size = System::Drawing::Size(51, 24);
 			this->numericUpDown6->TabIndex = 31;
 			// 
 			// button8
@@ -479,15 +479,15 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button8->ForeColor = System::Drawing::Color::RosyBrown;
 			this->button8->ImageAlign = System::Drawing::ContentAlignment::TopLeft;
-			this->button8->Location = System::Drawing::Point(21, 63);
+			this->button8->Location = System::Drawing::Point(35, 62);
 			this->button8->Margin = System::Windows::Forms::Padding(2, 3, 2, 3);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(84, 70);
-			this->button8->TabIndex = 82;
+			this->button8->TabIndex = 40;
 			this->button8->UseVisualStyleBackColor = false;
-			this->button8->Click += gcnew System::EventHandler(this, &PO::button8_Click);
+			this->button8->Click += gcnew System::EventHandler(this, &Saltnpaper::button8_Click);
 			// 
-			// PO
+			// Saltnpaper
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
@@ -519,17 +519,18 @@ namespace OOPFINALPROJECTSEMESTER2 {
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->pictureBox7);
-			this->Controls->Add(this->pictureBox6);
 			this->Controls->Add(this->pictureBox5);
+			this->Controls->Add(this->pictureBox6);
+			this->Controls->Add(this->pictureBox7);
 			this->Controls->Add(this->pictureBox4);
 			this->Controls->Add(this->pictureBox3);
 			this->Controls->Add(this->pictureBox2);
 			this->Controls->Add(this->pictureBox1);
+			this->Cursor = System::Windows::Forms::Cursors::PanNW;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			this->Name = L"PO";
-			this->Text = L"SPIN ROLL";
-			this->Load += gcnew System::EventHandler(this, &PO::PO_Load);
+			this->Name = L"Saltnpaper";
+			this->Text = L"TASTY TRIALS";
+			this->Load += gcnew System::EventHandler(this, &Saltnpaper::Saltnpaper_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox3))->EndInit();
@@ -548,35 +549,31 @@ namespace OOPFINALPROJECTSEMESTER2 {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		totalAmount = 0;
-		totalitems = 0;
-		totalitems += Convert::ToInt32(numericUpDown1->Value);
-		totalitems += Convert::ToInt32(numericUpDown2->Value);
-		totalitems += Convert::ToInt32(numericUpDown3->Value);
-		totalitems += Convert::ToInt32(numericUpDown4->Value);
-		totalitems += Convert::ToInt32(numericUpDown5->Value);
-		totalitems += Convert::ToInt32(numericUpDown6->Value);
-		totalAmount += Convert::ToInt32(textBox1->Text) * Convert::ToInt32(numericUpDown1->Value);
-		totalAmount += Convert::ToInt32(textBox2->Text) * Convert::ToInt32(numericUpDown2->Value);
-		totalAmount += Convert::ToInt32(textBox3->Text) * Convert::ToInt32(numericUpDown3->Value);
-		totalAmount += Convert::ToInt32(textBox4->Text) * Convert::ToInt32(numericUpDown4->Value);
-		totalAmount += Convert::ToInt32(textBox5->Text) * Convert::ToInt32(numericUpDown5->Value);
-		totalAmount += Convert::ToInt32(textBox6->Text) * Convert::ToInt32(numericUpDown6->Value);
-		nettotal = totalAmount + 150;
-		OOPFINALPROJECTSEMESTER2::CART^ cart = gcnew OOPFINALPROJECTSEMESTER2::CART(totalAmount, totalitems, nettotal,this);
-		cart->Show();
-		this->Hide();
-
-
+	private: System::Void Saltnpaper_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	totalAmount = 0;
+	totalitems = 0;
+	totalitems += Convert::ToInt32(numericUpDown1->Value);
+	totalitems += Convert::ToInt32(numericUpDown2->Value);
+	totalitems += Convert::ToInt32(numericUpDown3->Value);
+	totalitems += Convert::ToInt32(numericUpDown4->Value);
+	totalitems += Convert::ToInt32(numericUpDown5->Value);
+	totalitems += Convert::ToInt32(numericUpDown6->Value);
+	totalAmount += Convert::ToInt32(textBox1->Text) * Convert::ToInt32(numericUpDown1->Value);
+	totalAmount += Convert::ToInt32(textBox2->Text) * Convert::ToInt32(numericUpDown2->Value);
+	totalAmount += Convert::ToInt32(textBox3->Text) * Convert::ToInt32(numericUpDown3->Value);
+	totalAmount += Convert::ToInt32(textBox4->Text) * Convert::ToInt32(numericUpDown4->Value);
+	totalAmount += Convert::ToInt32(textBox5->Text) * Convert::ToInt32(numericUpDown5->Value);
+	totalAmount += Convert::ToInt32(textBox6->Text) * Convert::ToInt32(numericUpDown6->Value);
+	nettotal = totalAmount + 150;
+	OOPFINALPROJECTSEMESTER2::CART^ cart = gcnew OOPFINALPROJECTSEMESTER2::CART(totalAmount, totalitems, nettotal,this);
+	cart->Show();
+	this->Hide();
+}
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	this->Hide();
 	obj->Show();
-
-}
-private: System::Void PO_Load(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
